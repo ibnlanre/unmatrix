@@ -5,10 +5,12 @@
 var computed = require('computed-style');
 
 /**
- * Expose `unmatrix`
+ * Expose `unmatrix` and helpers
  */
 
-module.exports = unmatrix;
+module.exports = exports = unmatrix;
+exports.decompose = decompose;
+exports.parse = parse;
 
 /**
  * Unmatrix
@@ -19,7 +21,7 @@ module.exports = unmatrix;
 
 function unmatrix(el) {
   var prop = style(el);
-  var matrix = stom(prop);
+  var matrix = parse(prop);
   return parse(matrix);
 }
 
@@ -35,7 +37,7 @@ function unmatrix(el) {
  * @api private
  */
 
-function parse(m) {
+function decompose(m) {
   var A = m[0];
   var B = m[1];
   var C = m[2];
@@ -103,7 +105,7 @@ function style(el) {
  * @api private
  */
 
-function stom(str) {
+function parse(str) {
   var m = [];
 
   if (window.WebKitCSSMatrix) {
