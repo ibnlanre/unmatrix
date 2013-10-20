@@ -2,17 +2,19 @@
 <head>
   <title>transform component</title>
   <style>
-    #box {
+    div {
+      border: 1px solid #ccc;
       width: 100px;
       height: 100px;
+      background: alicebluel
+    }
+    #box {
       background: blue;
       -webkit-transform: scale(2) translate(200px, 100px) rotate(60deg) skew(20deg);
       position: absolute;
     }
 
     #box2 {
-      width: 100px;
-      height: 100px;
       background: red;
       position: absolute;
       opacity: 0.7;
@@ -20,15 +22,16 @@
   </style>
 </head>
 <body>
-  <h1>unmatrix component</h1>
   <div id="box"></div>
   <div id="box2"></div>
+  <div id="box3">This one should remain straight</div>
   <script src="../build/build.js" type="text/javascript"></script>
   <script type="text/javascript">
     var unmatrix = require('unmatrix');
     var t = unmatrix(box);
     console.log(JSON.stringify(t, true, 2));
     box2.style.webkitTransform = toString(t);
+    box3.style.webkitTransform = toString(unmatrix(box3));
 
     function toString(props) {
       var out = [];

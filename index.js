@@ -92,6 +92,7 @@ function decompose(m) {
 
 function parse(str) {
   var m = str.slice(7).match(/[\d\.\-]+/g);
+  if (!m) return [1, 0, 0, 1, 0, 0]
   return m.length == 6
     ? m.map(Number)
     : [
