@@ -9,40 +9,38 @@
   If you'd like to parse 3D transforms take a look at:
   http://www.w3.org/TR/css3-transforms/#matrix-decomposing.
 
-## Example
-
-```js
-var unmatrix = require('unmatrix');
-var t = unmatrix(box);
-box.style.webkitTransform = toString(t);
-```
-
 ## Installation
 
   Install with [component(1)](http://component.io):
 
     $ component install matthewmueller/unmatrix
 
-## API
-
-### unmatrix(el)
-
-Parse the individual values of a CSS transform. Returns the following object:
+Then in you code:
 
 ```js
-{
-  "translateX": 400, // px
-  "translateY": 200, // px
-  "rotate": 60, // deg
-  "skew": 20, // deg
-  "scaleX": 2,
-  "scaleY": 2
+var parse = require('unmatrix')
+```
+
+## API
+
+### parse(str)
+
+Parse a CSS transformation matrix into its semantic components:
+
+```js
+parse('matrix(1 1.7320508075688772, -1.3680805733026749, 1.6304149381918094, 400, 200)') == {
+  translateX: 400, // px
+  translateY: 200, // px
+  rotate: 60, // deg
+  skew: 20, // deg
+  scaleX: 2,
+  scaleY: 2
 }
 ```
 
 ## TODO
 
-- support for transform matrix parsing
+- support for 3D transforms
 - tests would be nice
 
 ## License
