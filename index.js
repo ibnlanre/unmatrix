@@ -1,9 +1,3 @@
-/**
- * Module dependencies
- */
-
-var style = require('computed-style');
-var prefix = require('prefix');
 
 /**
  * Expose `unmatrix` and helpers
@@ -20,10 +14,8 @@ exports.parse = parse;
  * @return {Object}
  */
 
-function unmatrix(el) {
-  var prop = style(el)[prefix('transform')];
-  var matrix = parse(prop);
-  return decompose(matrix);
+function unmatrix(str) {
+  return decompose(parse(str));
 }
 
 /**

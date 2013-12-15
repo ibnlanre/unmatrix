@@ -3,15 +3,12 @@
   "repo": "matthewmueller/unmatrix",
   "description": "parse the values of a css transform",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {
-    "jkroso/computed-style": "0.1.0",
-    "jkroso/prefix": "0.1.0"
+  "keywords": ["unmatrix", "parse", "matrix"],
+  "dependencies": {},
+  "development": {
+    "jkroso/computed-style": "*",
+    "jkroso/prefix": "*"
   },
-  "development": {},
   "license": "MIT",
-  "main": "index.js",
-  "scripts": [
-    "index.js"
-  ]
+  "scripts": ["index.js"]
 }

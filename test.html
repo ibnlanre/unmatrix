@@ -27,11 +27,14 @@
   <div id="box3">This one should remain straight</div>
   <script src="../build/build.js" type="text/javascript"></script>
   <script type="text/javascript">
+    var style = require('computed-style');
     var unmatrix = require('unmatrix');
-    var t = unmatrix(box);
+    var prefix = require('prefix');
+
+    var t = unmatrix(css(box));
     console.log(JSON.stringify(t, true, 2));
     box2.style.webkitTransform = toString(t);
-    box3.style.webkitTransform = toString(unmatrix(box3));
+    box3.style.webkitTransform = toString(unmatrix(css(box3)));
 
     function toString(props) {
       var out = [];
@@ -57,7 +60,10 @@
 
       return out.join(' ');
     };
+    
+    function css(el){
+      return style(el)[prefix('transform')]
+    }
   </script>
 </body>
 </html>
-
