@@ -1,0 +1,12 @@
+{
+  "name": "unmatrix",
+  "version": "0.1.0",
+  "description": "parse the values of a css transform",
+  "keywords": ["unmatrix", "parse", "matrix"],
+  "dependencies": {},
+  "repository": "git://github.com/jkroso/unmatrix.git",
+  "bugs": "https://github.com/jkroso/unmatrix/issues",
+  "author": "Jake Rosoman",
+  "files": ["index.js"],
+  "license": "MIT"
+}
