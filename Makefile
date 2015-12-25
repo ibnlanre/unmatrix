@@ -1,11 +1,7 @@
+serve: node_modules
+	@$</.bin/serve -Slojp 0
 
-build: components index.js
-	@component build --dev
+node_modules: package.json
+	@npm install
 
-components: component.json
-	@component install --dev
-
-clean:
-	rm -fr build components template.js
-
-.PHONY: clean
+.PHONY: serve

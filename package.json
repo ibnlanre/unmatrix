@@ -1,9 +1,13 @@
 {
-  "name": "unmatrix",
+  "name": "@jkroso/unmatrix",
   "version": "0.1.0",
   "description": "parse the values of a css transform",
   "keywords": ["unmatrix", "parse", "matrix"],
   "dependencies": {},
+  "devDependencies": {
+    "serve": "jkroso/serve",
+    "prefix": "0"
+  },
   "repository": "git://github.com/jkroso/unmatrix.git",
   "bugs": "https://github.com/jkroso/unmatrix/issues",
   "author": "Jake Rosoman",
